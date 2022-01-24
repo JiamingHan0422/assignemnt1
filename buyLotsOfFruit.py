@@ -38,11 +38,10 @@ def buyLotsOfFruit(orderList):
     "*** YOUR CODE HERE ***"
     totalCost
     for order_Element in orderList:
-        if order_Element[0] in fruitPrices:
-            totalCost += order_Element[1] * fruitPrices.get(order_Element[0])
-        else:
+        if order_Element[0] not in fruitPrices:
             print("No such fruit.")
-            return None
+        else:
+            totalCost += order_Element[1] * fruitPrices.get(order_Element[0])
     return totalCost
 
 
